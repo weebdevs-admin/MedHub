@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tibbiyotni vizual hamda o'yin asosida o'rganish imkoniyati">
+  <meta content="" name="description">
+  <meta content="Med-Hub" name="keywords">
+  <meta name="author" content="Arabboy Rejabboyev">
+  <link rel="apple-touch-icon" sizes="57x57" href="../assets/icons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../assets/icons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../assets/icons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../assets/icons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../assets/icons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../assets/icons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../assets/icons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../assets/icons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../assets/icons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../assets/icons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png">
+<link rel="manifest" href="../assets/icons/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="../assets/icons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+  <title>Med-Hub Tibbiyotni vizual hamda o'yin asosida o'rganish imkoniyati</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+<style>
+  .card {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    height: 200px;
+    perspective: 1000px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .is-flipped {
+    transform: rotateY(180deg);
+  }
+
+  .front,
+  .back {
+    backface-visibility: hidden;
+    box-sizing: border-box;
+    color: black;
+    font-size: 20px;
+    height: 100%;
+    left: 0;
+    padding: 20px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+  }
+
+  .back {
+    transform: rotateY(180deg);
+  }
+</style>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center justify-content-between">
+
+        <img src="./.../assets/Galogramma.png" alt="" style="width: 50px;">
+        <h1 class="logo"><a href="index.html">Med<span> Hub</span> </a></h1>
+      </div>
+      
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="../#hero">Bosh Sahifa</a></li>
+          <li><a class="nav-link scrollto" href="abaut">Biz Haqimizda</a></li>
+          <li><a class="nav-link scrollto" href="course">Kurslar</a></li>
+          <li><a class="nav-link scrollto" href="../#team">Jamoa</a></li>
+         
+          <li><a class="nav-link scrollto " href="../#contact">Aloqa</a></li>
+          <li><a class=" scrollto btn-get-started text-white  btnB border-circle" href="./login.html">Boshlash</a></li>
+
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+  <section id="services" class="services">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title mt-5">
+        <!-- <h2>Kurslar</h2> -->
+        <h3><span>Flashkartlar</h3>
+        <!-- <p> 7 loyihani o'z ichiga oladi, Barcha loyihalarimiz odob ahloqga qaratilgan</p> -->
+      </div>
+      <div class="row">
+        
+        {% for Fleshcardlar in Fleshcardlar%}
+        <div class=" m-4 col-lg-4 col-md-6 " data-aos="zoom-in" data-aos-delay="100">
+          <div class="card" >
+            <div class="front">
+              <h2>{{Fleshcardlar.question}}</h2>
+            </div>
+            <div class="back">
+              <p>{{Fleshcardlar.answer}}</p>
+            </div>
+          </div>
+        </div>
+        {%endfor%}
+       
+        
+        
+
+
+      </div>
+
+    </div>
+  </section>
+  <!-- End Services Section -->
+  
+  <!-- <button id="btn">Show Answer</button> -->
+  <script > 
+    const btn = document.getElementById('btn');
+const cards = document.querySelectorAll('.card');
+
+cards.forEach(card => {
+    card.addEventListener('click', () => {
+        card.classList.toggle('is-flipped');
+    });
+});
+
+// btn.addEventListener('click', () => {
+//     cards.forEach(card => {
+//         card.classList.toggle('is-flipped');
+//     });
+// });
+
+  </script>
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact flex-column">
+            <div class="d-flex">
+
+              <a href="index.html" class="logo"><img src=".../assets/Galogramma.png"
+                  style="width: 60px;"
+                  alt=""></a>
+
+              <h3 class="mt-2 " style="color: #0000ffff;">Med<span style="color: rgb(209, 107, 11);"> Hub</span></h3>
+            </div>
+            <p>
+              
+              Andijon, <br>
+              Eski Shahar,<br>
+               Oltinko'l ko'chasi 1-A uy
+              <br><br>
+              <strong>Telefon:</strong> +998 90 750 37 97<br>
+              <strong>Email:</strong>medhubuz@gmail.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Foydali havolalar</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="../#hero">Bosh Sahifa</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="abaut">Biz Haqimisda</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="course">Kurslar</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Bizning xizmatlar</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Ta'lim berish</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Medical English</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Shifokorlar tayyorlash</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">"Mock" imtixonlar</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Xalqaro tibbiy sertifikatlarga tayyorlash</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Biznig ijtimoiy tarmoqlar</h4>
+            <p>Bizni ijtimoiy tarmoqlarda kuzatib boring </p>
+            <div class="social-links mt-3">
+              <a href="https://www.twitter.com/@ARejabboyev" class="twitter rounded-circle"><i class="bx  bxl-twitter"></i></a>
+              <a href="https://www.instagram.com/@arabboy_rejabboyev" class="facebook rounded-circle"><i class="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com/@arabboy_rejabboyev" class="instagram rounded-circle"><i class="bx bxl-instagram"></i></a>
+              <a href="https://t.me/A_Rejabboyev" class="telegram rounded-circle" ><i class="bx bxl-telegram"></i></a>
+              <a href="https://www.instagram.com/@arabboy_rejabboyev" class="linkedin rounded-circle"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+  </footer>
+  <!-- End Footer -->
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
